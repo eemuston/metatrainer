@@ -1,0 +1,73 @@
+import React, { useState, useEffect } from 'react'
+import './Quiz.css'
+
+const Quiz = ({ category, questions }) => {
+  const [currentQuestion, setCurrentQuestion] = useState(null)
+  const [options, setOptions] = useState([])
+  const [answerFeedback, setAnswerFeedback] = useState('')
+  const [selectedAnswer, setSelectedAnswer] = useState('')
+  const [hasAnswered, setHasAnswered] = useState(false)
+
+  const generateQuestion = () => {
+    const randomQuestion = questions[Math.floor(Math.random() * questions.length)]
+
+    let answers = [randomQuestion.country]
+    while (answers.length < 4) {
+      const randomCountry = questions[Math.floor(Math.random() * questions.length)].country
+      if (!answers.includes(randomCountry)) {
+        answers.push(randomCountry)
+      }
+    }
+
+    answers = answers.sort(() => Math.random() - 0.5)
+
+    setCurrentQuestion(randomQuestion)
+    setOptions(answers)
+    setAnswerFeedback('')
+    setSelectedAnswer('')
+    setHasAnswered(false)
+  }
+
+  const handleAnswerClick = (answer) => {
+    if (hasAnswered) return
+    setSelectedAnswer(answer)
+    setHasAnswered(true)
+    if (answer === currentQuestion.country) {
+      setAnswerFeedback('Correct!')
+    } else {
+      setAnswerFeedback(`Wrong! The correct answer was ${currentQuestion.country}!`)
+    }
+  }
+
+  useEffect(() => {
+    console.log('Questions received')
+    generateQuestion()
+  }, [questions])
+
+  if (!currentQuestion) return <div>Loading...</div>
+
+  const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1)
+  return (
+    <div className="container">
+      <h1>{capitalizedCategory}</h1>
+      <img src={currentQuestion.image} alt="bollard" />
+      <ul>
+        {options.map((option, index) => (
+          <li
+            key={index}
+            className={`option-item ${selectedAnswer === option ? (option === currentQuestion.country ? 'correct' : 'wrong') : ''} ${hasAnswered ? 'disabled' : ''}`}
+            onClick={() => handleAnswerClick(option)}
+          >
+            {option}
+          </li>
+        ))}
+      </ul>
+      <div className="feedback">{answerFeedback}</div>
+      <button onClick={generateQuestion} disabled={!hasAnswered}>
+        Next
+      </button>
+    </div>
+  )
+}
+
+export default Quiz
