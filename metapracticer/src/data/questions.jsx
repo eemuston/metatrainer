@@ -15,5 +15,5 @@ export const bollardsQuestions = [
     { image: '/images/bollards/bol14.png', country: 'Bangladesh'},
     { image: '/images/bollards/bol15.png', country: 'Mexico'},
     { image: '/images/bollards/bol16.png', country: 'Ecuador'},
-    { image: '/images/bollards/bol17.png', country: 'Peru'},
+    { image: '/images/bollards/bol17.png', country: 'Peru', location: ""},
   ]

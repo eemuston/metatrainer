@@ -49,14 +49,25 @@ const Quiz = ({ category, questions }) => {
     setHasAnswered(true)
 
     const feedbackText = answer === currentQuestion.country
-      ? `Correct! The answer is ${currentQuestion.country}`
+      ? `Correct`
       : `Wrong! The correct answer was ${currentQuestion.country}`
 
-    const finalFeedback = currentQuestion.desc
-      ? `${feedbackText}! <br/> <br/> ${currentQuestion.desc}`
-      : `${feedbackText}!`
+      const finalFeedback = (
+        <div>
+          <span>{feedbackText}!</span>
+          <br />
+          {currentQuestion.desc && (
+            <>
+            <div className='desc'>
+              <span>{currentQuestion.desc}</span>
+            </div>
+            </>
+          )}
+          <div className="fblocation">Click the image to see the location!</div>
+        </div>
+      )
 
-    setAnswerFeedback(<span dangerouslySetInnerHTML={{ __html: finalFeedback }} />)
+    setAnswerFeedback(finalFeedback)
 
     if (answer === currentQuestion.country) {
       setCorrectAnswers(correctAnswers + 1)
@@ -86,7 +97,7 @@ const Quiz = ({ category, questions }) => {
     <div className="container">
       <h1>{capitalizedCategory}</h1>
       <h2>Round: {round} / 10</h2>
-      <img className='image-q' src={currentQuestion.image} alt="question" />
+      {hasAnswered ? (<a href={currentQuestion.location} target='_blank'><img className='image-q' src={currentQuestion.image} alt="question" /></a>) : (<img className='image-q' src={currentQuestion.image} alt="question" />)}
       {gameFinished ? (<h1 className='finish'>The game is Finished</h1>) : ( <div className="feedback">{answerFeedback}</div>)}
       {gameFinished ? (<h1 className='finish'>Scored {correctAnswers}/10</h1>) : 
       (<ul className="options-grid">
