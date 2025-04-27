@@ -7,9 +7,34 @@ const Home = () => {
     <div className="home">
       <h1>Select a Category</h1>
       <ul>
-        <li className='button'><Link to="/quiz/bollards">Bollards</Link></li>
-        <li className='button'><Link to="/quiz/streetSigns">Street Signs</Link></li>
-        <li className='button'><Link to="/quiz/googlecars">Google Cars</Link></li>
+        <div className='card'>
+          <img className='card-img' src="/images/bollards/bol1.png"/>
+          <li className='button'><Link to="/quiz/bollards">Bollards</Link></li>
+        </div>
+        <div className='card'>
+          <img className='card-img' src="/images/streetsigns/sign1.png"/>
+          <li>streetSigns coming soon</li>
+        </div>
+        <div className='card'>
+          <img className='card-img' src="/images/bollards/bol1.png"/>
+          <li>googleCars coming soon</li>
+        </div>
+        <div className='card'>
+          <img className='card-img' src="/images/bollards/bol1.png"/>
+          <li>poles coming soon</li>
+        </div>
+        <div className='card'>
+          <img className='card-img' src="/images/bollards/bol1.png"/>
+          <li>license plates coming soon</li>
+        </div>
+        <div className='card'>
+          <img className='card-img' src="/images/bollards/bol1.png"/>
+          <li>chervons coming soon</li>
+        </div>
+        <div className='card'>
+          <img className='card-img' src="/images/bollards/bol1.png"/>
+          <li>road markings coming soon</li>
+        </div>
       </ul>
     </div>
   );

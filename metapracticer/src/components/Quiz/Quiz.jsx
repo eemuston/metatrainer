@@ -28,16 +28,22 @@ const Quiz = ({ category, questions }) => {
     setHasAnswered(false)
   }
 
-  const handleAnswerClick = (answer) => {
+const handleAnswerClick = (answer) => {
     if (hasAnswered) return
+    
     setSelectedAnswer(answer)
     setHasAnswered(true)
-    if (answer === currentQuestion.country) {
-      setAnswerFeedback('Correct!')
-    } else {
-      setAnswerFeedback(`Wrong! The correct answer was ${currentQuestion.country}!`)
-    }
-  }
+
+    const feedbackText = answer === currentQuestion.country
+      ? `Correct! The answer is ${currentQuestion.country}`
+      : `Wrong! The correct answer was ${currentQuestion.country}`
+
+    const finalFeedback = currentQuestion.desc
+      ? `${feedbackText}! <br/> ${currentQuestion.desc}`
+      : `${feedbackText}!`;
+  
+    setAnswerFeedback(<span dangerouslySetInnerHTML={{ __html: finalFeedback }} />)
+ }
 
   useEffect(() => {
     console.log('Questions received')
@@ -51,7 +57,8 @@ const Quiz = ({ category, questions }) => {
     <div className="container">
       <h1>{capitalizedCategory}</h1>
       <img src={currentQuestion.image} alt="bollard" />
-      <ul>
+      <div className="feedback">{answerFeedback}</div>
+      <ul className='options-grid'>
         {options.map((option, index) => (
           <li
             key={index}
@@ -62,7 +69,6 @@ const Quiz = ({ category, questions }) => {
           </li>
         ))}
       </ul>
-      <div className="feedback">{answerFeedback}</div>
       <button onClick={generateQuestion} disabled={!hasAnswered}>
         Next
       </button>
