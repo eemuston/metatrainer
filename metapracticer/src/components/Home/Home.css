@@ -21,7 +21,7 @@
 
   .home li:hover {
     background: #f2f2f2;
-    cursor: auto;
+    cursor: wait;
   }
   
   .home .button {
@@ -60,5 +60,6 @@
 
   .card-img{
     width: 100px;
+    max-height: 170px;
     border-radius: 10px;
   }

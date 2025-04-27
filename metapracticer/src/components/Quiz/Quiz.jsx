@@ -39,7 +39,7 @@ const handleAnswerClick = (answer) => {
       : `Wrong! The correct answer was ${currentQuestion.country}`
 
     const finalFeedback = currentQuestion.desc
-      ? `${feedbackText}! <br/> ${currentQuestion.desc}`
+      ? `${feedbackText}! <br/> <br/> ${currentQuestion.desc}`
       : `${feedbackText}!`;
   
     setAnswerFeedback(<span dangerouslySetInnerHTML={{ __html: finalFeedback }} />)

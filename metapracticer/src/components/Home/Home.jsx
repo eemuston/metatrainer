@@ -16,24 +16,28 @@ const Home = () => {
           <li>streetSigns coming soon</li>
         </div>
         <div className='card'>
-          <img className='card-img' src="/images/bollards/bol1.png"/>
+          <img className='card-img' src=""/>
           <li>googleCars coming soon</li>
         </div>
         <div className='card'>
-          <img className='card-img' src="/images/bollards/bol1.png"/>
+          <img className='card-img' src=""/>
           <li>poles coming soon</li>
         </div>
         <div className='card'>
-          <img className='card-img' src="/images/bollards/bol1.png"/>
+          <img className='card-img' src=""/>
           <li>license plates coming soon</li>
         </div>
         <div className='card'>
-          <img className='card-img' src="/images/bollards/bol1.png"/>
+          <img className='card-img' src=""/>
           <li>chervons coming soon</li>
         </div>
         <div className='card'>
-          <img className='card-img' src="/images/bollards/bol1.png"/>
+          <img className='card-img' src=""/>
           <li>road markings coming soon</li>
+        </div>
+        <div className='card'>
+          <img className='card-img' src=""/>
+          <li>randomshit coming soon</li>
         </div>
       </ul>
     </div>
