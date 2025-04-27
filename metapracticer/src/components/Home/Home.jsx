@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import './Home.css'
 
 const Home = () => {
@@ -40,6 +42,14 @@ const Home = () => {
           <li>flags coming soon</li>
         </div>
       </ul>
+      <div className='bio'>
+        <img className='bioimg' src="/me.png"/>
+        <div className='icons'>
+          <h3>My Socials:</h3>
+          <a href='https://github.com/eemuston'><FontAwesomeIcon icon={faGithub} size="5x"/></a>
+          <a href='https://www.instagram.com/meemeli.mustone/'><FontAwesomeIcon icon={faInstagram} size="5x"/></a>
+        </div>
+      </div>
     </div>
   );
 };

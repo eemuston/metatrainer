@@ -11,7 +11,7 @@
   
   .home ul {
     list-style: none;
-    padding: 0;
+    padding-bottom: 20px;
     grid-template-columns: repeat(4, 1fr);
   }
 
@@ -49,7 +49,7 @@
   }
   
   .home .button:hover {
-    background-color: darkgray;
+    background-color: gray;
   }
   
   .card{
@@ -65,4 +65,45 @@
     max-height: 170px;
     border-radius: 10px;
     border: solid 2px black;
+  }
+
+  .bio {
+    display: flex;           
+    align-items: center;      
+    padding: 30px;
+    margin: 0 auto;
+    width: 400px;
+    height: 250px;           
+    border-radius: 10px;
+    background: darkgrey;
+    gap: 20px;                
+  }
+  
+  .bioimg {
+    width: 55%;
+    max-height: 260px;
+    border-radius: 10px;
+    border: solid 2px black;
+  }
+
+  .icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .icons svg{
+    color: #333;
+  }
+
+  .icons svg:hover{
+    color: gray;
+  }
+
+  h3{
+    padding-bottom: 10px;
+    font-size: 1.87em;
+    color: #333;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
