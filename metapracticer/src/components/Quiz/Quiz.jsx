@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Quiz.css'
 
 const Quiz = ({ category, questions }) => {
@@ -7,9 +8,20 @@ const Quiz = ({ category, questions }) => {
   const [answerFeedback, setAnswerFeedback] = useState('')
   const [selectedAnswer, setSelectedAnswer] = useState('')
   const [hasAnswered, setHasAnswered] = useState(false)
+  const [round, setRound] = useState(1)
+  const [correctAnswers, setCorrectAnswers] = useState(0)
+  const [remainingQuestions, setRemainingQuestions] = useState([...questions])
+  const [gameFinished, setGameFinished] = useState(false)
+  const navigate = useNavigate()
 
   const generateQuestion = () => {
-    const randomQuestion = questions[Math.floor(Math.random() * questions.length)]
+    if (round > 9) {
+      setGameFinished(true)
+      return
+    }
+
+    const randomIndex = Math.floor(Math.random() * remainingQuestions.length)
+    const randomQuestion = remainingQuestions[randomIndex]
 
     let answers = [randomQuestion.country]
     while (answers.length < 4) {
@@ -21,6 +33,8 @@ const Quiz = ({ category, questions }) => {
 
     answers = answers.sort(() => Math.random() - 0.5)
 
+    setRemainingQuestions(remainingQuestions.filter((q, index) => index !== randomIndex))
+
     setCurrentQuestion(randomQuestion)
     setOptions(answers)
     setAnswerFeedback('')
@@ -28,9 +42,9 @@ const Quiz = ({ category, questions }) => {
     setHasAnswered(false)
   }
 
-const handleAnswerClick = (answer) => {
+  const handleAnswerClick = (answer) => {
     if (hasAnswered) return
-    
+
     setSelectedAnswer(answer)
     setHasAnswered(true)
 
@@ -40,25 +54,42 @@ const handleAnswerClick = (answer) => {
 
     const finalFeedback = currentQuestion.desc
       ? `${feedbackText}! <br/> <br/> ${currentQuestion.desc}`
-      : `${feedbackText}!`;
-  
+      : `${feedbackText}!`
+
     setAnswerFeedback(<span dangerouslySetInnerHTML={{ __html: finalFeedback }} />)
- }
+
+    if (answer === currentQuestion.country) {
+      setCorrectAnswers(correctAnswers + 1)
+    }
+  }
+
+  const handleNextClick = () => {
+    if (round < 10) {
+      setRound(round + 1)
+    }
+    generateQuestion()
+  }
+
+  const handleFinish = () => {
+    navigate('/')
+  }
 
   useEffect(() => {
-    console.log('Questions received')
     generateQuestion()
   }, [questions])
 
   if (!currentQuestion) return <div>Loading...</div>
 
   const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1)
+
   return (
     <div className="container">
       <h1>{capitalizedCategory}</h1>
-      <img src={currentQuestion.image} alt="bollard" />
-      <div className="feedback">{answerFeedback}</div>
-      <ul className='options-grid'>
+      <h2>Round: {round} / 10</h2>
+      <img className='image-q' src={currentQuestion.image} alt="question" />
+      {gameFinished ? (<h1 className='finish'>The game is Finished</h1>) : ( <div className="feedback">{answerFeedback}</div>)}
+      {gameFinished ? (<h1 className='finish'>Scored {correctAnswers}/10</h1>) : 
+      (<ul className="options-grid">
         {options.map((option, index) => (
           <li
             key={index}
@@ -68,10 +99,11 @@ const handleAnswerClick = (answer) => {
             {option}
           </li>
         ))}
-      </ul>
-      <button onClick={generateQuestion} disabled={!hasAnswered}>
+      </ul>)}
+      {gameFinished ? (<button onClick={handleFinish}>Finish</button>) :
+      (<button onClick={handleNextClick} disabled={!hasAnswered || round > 10}>
         Next
-      </button>
+      </button>)}
     </div>
   )
 }

@@ -9,7 +9,7 @@ const Home = () => {
       <ul>
         <div className='card'>
           <img className='card-img' src="/images/bollards/bol1.png"/>
-          <li className='button'><Link to="/quiz/bollards">Bollards</Link></li>
+          <div className='button'><Link to="/quiz/bollards">Bollards</Link></div>
         </div>
         <div className='card'>
           <img className='card-img' src="/images/streetsigns/sign1.png"/>
@@ -37,7 +37,7 @@ const Home = () => {
         </div>
         <div className='card'>
           <img className='card-img' src=""/>
-          <li>randomshit coming soon</li>
+          <li>flags coming soon</li>
         </div>
       </ul>
     </div>
