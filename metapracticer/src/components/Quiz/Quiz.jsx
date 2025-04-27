@@ -63,7 +63,7 @@ const Quiz = ({ category, questions }) => {
             </div>
             </>
           )}
-          <div className="fblocation">Click the image to see the location!</div>
+          {currentQuestion.location ? (<div className="fblocation">Click the image to see the location!</div>) : (<></>)}
         </div>
       )
 
@@ -98,8 +98,8 @@ const Quiz = ({ category, questions }) => {
       <h1>{capitalizedCategory}</h1>
       <h2>Round: {round} / 10</h2>
       {hasAnswered ? (<a href={currentQuestion.location} target='_blank'><img className='image-q' src={currentQuestion.image} alt="question" /></a>) : (<img className='image-q' src={currentQuestion.image} alt="question" />)}
-      {gameFinished ? (<h1 className='finish'>The game is Finished</h1>) : ( <div className="feedback">{answerFeedback}</div>)}
-      {gameFinished ? (<h1 className='finish'>Scored {correctAnswers}/10</h1>) : 
+      {gameFinished ? (<h1 className='finish'>Game Over</h1>) : ( <div className="feedback">{answerFeedback}</div>)}
+      {gameFinished ? (<h1 className='finish'>Your Score {correctAnswers}/10</h1>) : 
       (<ul className="options-grid">
         {options.map((option, index) => (
           <li
