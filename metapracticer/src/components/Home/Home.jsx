@@ -9,7 +9,7 @@ const Home = () => {
       <ul>
         <li className='button'><Link to="/quiz/bollards">Bollards</Link></li>
         <li className='button'><Link to="/quiz/streetSigns">Street Signs</Link></li>
-        <li className='button'><Link to="/quiz/cars">Cars</Link></li>
+        <li className='button'><Link to="/quiz/googlecars">Google Cars</Link></li>
       </ul>
     </div>
   );

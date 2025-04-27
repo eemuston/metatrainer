@@ -7,7 +7,7 @@ import { bollardsQuestions } from './data/questions'
 import { useParams } from 'react-router-dom'
 import './App.css'
 // import streetSignsQuestions from './data/streetSigns' // Uncomment when available
-// import carsQuestions from './data/cars' // Uncomment when available
+// import googleCarsQuestions from './data/cars' // Uncomment when available
 
 const App = () => {
   return (
@@ -34,7 +34,7 @@ const QuizWithCategory = () => {
   if (category === 'bollards') {
     questions = bollardsQuestions }
   // if (category === 'streetSigns') questions = streetSignsQuestions
-  // if (category === 'cars') questions = carsQuestions
+  // if (category === 'googleCars') questions = googleCarsQuestions
 
   return <Quiz category={category} questions={questions} />
 }
