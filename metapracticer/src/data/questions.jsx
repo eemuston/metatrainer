@@ -15,5 +15,18 @@ export const bollardsQuestions = [
     { image: '/images/bollards/bol14.png', country: 'Bangladesh'},
     { image: '/images/bollards/bol15.png', country: 'Mexico'},
     { image: '/images/bollards/bol16.png', country: 'Ecuador'},
-    { image: '/images/bollards/bol17.png', country: 'Peru', location: ""},
+    { image: '/images/bollards/bol17.png', country: 'Peru'},
   ]
+
+export const flagQuestions = [
+  { image: '/images/flags/flag1.png', country: 'Finland'},
+  { image: '/images/flags/flag2.png', country: 'Sweden'},
+  { image: '/images/flags/flag3.png', country: 'Norway'},
+  { image: '/images/flags/flag4.png', country: 'Denmark'},
+  { image: '/images/flags/flag5.png', country: 'Iceland'},
+  { image: '/images/flags/flag6.png', country: 'Estonia'},
+  { image: '/images/flags/flag7.png', country: 'Latvia'},
+  { image: '/images/flags/flag8.png', country: 'Lithuania'},
+  { image: '/images/flags/flag9.png', country: 'Poland'},
+  { image: '/images/flags/flag10.png', country: 'Germany'},
+]

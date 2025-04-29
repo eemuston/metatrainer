@@ -17,7 +17,7 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
-h1, h2 {
+h1 {
   padding-bottom: 10px;
   font-size: 2em;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -29,9 +29,9 @@ ul {
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   padding: 0;
-  margin: 0 auto; /* center the grid */
+  margin: 0 auto;
   list-style-type: none;
-  justify-content: center; /* new line */
+  justify-content: center;
 }
 
 li {
@@ -105,7 +105,7 @@ button:disabled {
 
   ul {
     grid-template-columns: 1fr;
-    justify-items: center; /* center the li inside ul */
+    justify-items: center;
   }
 
   .image-q {
@@ -119,7 +119,7 @@ button:disabled {
     min-width:300px;
   }
 
-  h1, h2 {
+  h1 {
     font-size: 1.5em;
   }
 

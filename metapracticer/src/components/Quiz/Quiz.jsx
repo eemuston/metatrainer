@@ -96,7 +96,7 @@ const Quiz = ({ category, questions }) => {
   return (
     <div className="container">
       <h1>{capitalizedCategory}</h1>
-      <h2>Round: {round} / 10</h2>
+      <h1>Round: {round} / 10</h1>
       {hasAnswered ? (<a href={currentQuestion.location} target='_blank'><img className='image-q' src={currentQuestion.image} alt="question" /></a>) : (<img className='image-q' src={currentQuestion.image} alt="question" />)}
       {gameFinished ? (<h1 className='finish'>Game Over</h1>) : ( <div className="feedback">{answerFeedback}</div>)}
       {gameFinished ? (<h1 className='finish'>Your Score {correctAnswers}/10</h1>) : 

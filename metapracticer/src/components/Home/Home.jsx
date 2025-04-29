@@ -39,7 +39,7 @@ const Home = () => {
         </div>
         <div className='card'>
           <img className='card-img' src="/images/home/flag.png"/>
-          <div className='button'>Flags</div>
+          <div className='button'><Link to="/quiz/flags">Flags</Link></div>
         </div>
       </ul>
       <div class="last-section">
