@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Quiz.css'
 
-const Quiz = ({ category, questions }) => {
+const Quiz = ({ category, questions, styleType }) => {
   const [currentQuestion, setCurrentQuestion] = useState(null)
   const [options, setOptions] = useState([])
   const [answerFeedback, setAnswerFeedback] = useState('')
@@ -97,7 +97,7 @@ const Quiz = ({ category, questions }) => {
     <div className="container">
       <h1>{capitalizedCategory}</h1>
       <h1>Round: {round} / 10</h1>
-      {hasAnswered ? (<a href={currentQuestion.location} target='_blank'><img className='image-q' src={currentQuestion.image} alt="question" /></a>) : (<img className='image-q' src={currentQuestion.image} alt="question" />)}
+      {hasAnswered ? (<a href={currentQuestion.location} target='_blank'><img className={`image-q ${styleType === 'tall' ? 'tall' : 'wide'}`} src={currentQuestion.image} alt="question" /></a>) : (<img className={`image-q ${styleType === 'tall' ? 'tall' : 'wide'}`} src={currentQuestion.image} alt="question" />)}
       {gameFinished ? (<h1 className='finish'>Game Over</h1>) : ( <div className="feedback">{answerFeedback}</div>)}
       {gameFinished ? (<h1 className='finish'>Your Score {correctAnswers}/10</h1>) : 
       (<ul className="options-grid">

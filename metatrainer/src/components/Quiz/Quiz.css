@@ -17,6 +17,14 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
+.image-q.tall{
+  width: 250px;
+}
+
+.image-q.wide{
+  width: 500px;
+}
+
 h1 {
   padding-bottom: 10px;
   font-size: 2em;
@@ -108,8 +116,12 @@ button:disabled {
     justify-items: center;
   }
 
-  .image-q {
+  .image-q.tall{
     width: 200px;
+  }
+  
+  .image-q.wide{
+    width: 400px;
   }
 }
 
@@ -135,8 +147,12 @@ button:disabled {
     padding: 8px 16px;
   }
 
-  .image-q {
+  .image-q.tall{
     width: 150px;
+  }
+  
+  .image-q.wide{
+    width: 250px;
   }
 
   .feedback, .finish, .fblocation, .desc {

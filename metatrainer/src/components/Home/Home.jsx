@@ -10,36 +10,36 @@ const Home = () => {
       <h1>Select a Category</h1>
       <ul>
         <div className='card'>
+          <img className='card-img' src="/images/home/flag.png"/>
+          <div className='button'><Link to="/quiz/flags">Flags</Link></div>
+        </div>
+        <div className='card'>
+          <img className='card-img' src="/images/home/plate.png"/>
+          <div className='button'><Link to="/quiz/plates">License Plates</Link></div>
+        </div>
+        <div className='card'>
           <img className='card-img' src="/images/home/bollard.png"/>
           <div className='button'><Link to="/quiz/bollards">Bollards</Link></div>
         </div>
         <div className='card'>
           <img className='card-img' src="/images/home/sign.png"/>
-          <div className='button'>Street Signs</div>
-        </div>
-        <div className='card'>
-          <img className='card-img' src="/images/home/car.png"/>
-          <div className='button'>Google Cars</div>
+          <div className='button'><Link to="/quiz/streetSigns">Street Signs</Link></div>
         </div>
         <div className='card'>
           <img className='card-img' src="/images/home/pole.png"/>
-          <div className='button'>Poles</div>
-        </div>
-        <div className='card'>
-          <img className='card-img' src="/images/home/plate.png"/>
-          <div className='button'>License Plates</div>
+          <div className='button'><Link to="/NotReady">Poles</Link></div>
         </div>
         <div className='card'>
           <img className='card-img' src="/images/home/chevron.png"/>
-          <div className='button'>Chevrons</div>
+          <div className='button'><Link to="/NotReady">Chevrons</Link></div>
         </div>
         <div className='card'>
           <img className='card-img' src="/images/home/markings.png"/>
-          <div className='button'>Road Markings</div>
+          <div className='button'><Link to="/NotReady">Road Markings</Link></div>
         </div>
         <div className='card'>
-          <img className='card-img' src="/images/home/flag.png"/>
-          <div className='button'><Link to="/quiz/flags">Flags</Link></div>
+          <img className='card-img' src="/images/home/car.png"/>
+          <div className='button'><Link to="/quiz/cars">Cars</Link></div>
         </div>
       </ul>
       <div class="last-section">
