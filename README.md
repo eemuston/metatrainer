@@ -19,4 +19,10 @@ MetaTrainer is an interactive web application designed to help users practice Ge
 
 Here is a short video showcasing the site in action:
 
-[![Watch the demo](https://img.youtube.com/vi/OtzGTFpkkIk/0.jpg)](https://www.youtube.com/watch?v=OtzGTFpkkIk)
+<iframe width="800" height="450"
+  src="https://www.youtube.com/watch?v=OtzGTFpkkIk"
+  title="YouTube video"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
