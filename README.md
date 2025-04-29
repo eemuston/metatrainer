@@ -20,6 +20,6 @@ MetaTrainer is an interactive web application designed to help users practice Ge
 Here is a short video showcasing the site in action:
 
 <video width="800" controls>
-  <source src="https://github.com/eemuston/metatrainer/tree/main/metatrainer/public/images/homedemo.mp4" type="video/mp4" />
+  <source src="https://github.com/eemuston/metatrainer/tree/main/metatrainer/public/images/home/demo.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
