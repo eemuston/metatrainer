@@ -138,3 +138,56 @@
   .last-section{
     margin-bottom: 9px;
   }
+
+  @media (max-width: 1024px) {
+    .home ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .bio {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .home ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .bio {
+      flex-direction: column;
+      height: auto;
+      gap: 20px;
+      text-align: center;
+    }
+  
+    h3 {
+      font-size: 2em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .home ul {
+      grid-template-columns: 1fr;
+    }
+  
+    .bio {
+      padding: 20px;
+    }
+  
+    .bioimg {
+      width: 100%;
+    }
+  
+    .home h1 {
+      font-size: 1.5rem;
+    }
+  
+    .home .button {
+      max-width: 100%;
+    }
+  
+    h3 {
+      font-size: 1.8em;
+    }
+  }
