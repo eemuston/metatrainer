@@ -47,7 +47,7 @@ const QuizWithCategory = () => {
     questions = carQuestions
     type='wide'
   }
-  if (category === 'plates'){
+  if (category === 'licensePlates'){
     questions = plateQuestions
     type='wide'
   } 

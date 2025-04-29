@@ -91,7 +91,9 @@ const Quiz = ({ category, questions, styleType }) => {
 
   if (!currentQuestion) return <div>Loading...</div>
 
-  const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1)
+  const capitalizedCategory = category
+  .replace(/([A-Z])/g, ' $1')
+  .replace(/^./, str => str.toUpperCase());
 
   return (
     <div className="container">
