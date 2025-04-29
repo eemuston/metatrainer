@@ -1,0 +1,145 @@
+.container {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  max-width: 800px;
+  min-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+  box-sizing: border-box;
+}
+
+.image-q {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+  padding-bottom: 10px;
+  font-size: 2em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #666;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 0;
+  margin: 0 auto;
+  list-style-type: none;
+  justify-content: center;
+}
+
+li {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #222;
+  border-radius: 5px;
+  background-color: #666;
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #222;
+  font-size: 20px;
+  width: 100%;
+  min-width: 250px;
+  max-width: 350px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+}
+
+li:hover {
+  background-color: gray;
+}
+
+li.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: #222;
+  font-size: 20px;
+  cursor: pointer;
+  background: #666;
+  border-radius: 5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+  border: 1px solid #222;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.correct {
+  background-color: lightgreen;
+  border-color: green;
+}
+
+.wrong {
+  background-color: lightcoral;
+  border-color: red;
+}
+
+.feedback, .finish, .fblocation, .desc {
+  color: #666;
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 10px;
+}
+
+@media (max-width: 850px) {
+  .container {
+    padding: 15px;
+    max-width: 95%;
+    min-width: 550px;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .image-q {
+    width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container{
+    max-width:300px;
+    min-width:300px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  li {
+    font-size: 18px;
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+
+  .image-q {
+    width: 150px;
+  }
+
+  .feedback, .finish, .fblocation, .desc {
+    font-size: 18px;
+  }
+}
