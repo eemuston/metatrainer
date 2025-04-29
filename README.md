@@ -7,7 +7,7 @@ MetaTrainer is an interactive web application designed to help users practice Ge
 - **Multiple Categories**: Practice different GeoGuessr metas in categories like flags, street signs, license plates, and more.
 - **Quiz Style**: A fun and engaging quiz interface that helps you learn by answering location-based questions.
 - **Interactive Feedback**: Immediate feedback after each question to track your progress and enhance learning.
-- **Responsive Design**: The application is fully responsive, ensuring an optimal experience on both desktop and mobile devices.
+- **Responsive Design**: The application is responsive, ensuring an optimal experience on both desktop and mobile devices.
 
 ## Technologies Used
 
